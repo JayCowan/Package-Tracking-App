@@ -1,16 +1,20 @@
-# package_tracker_app
+# Package Tracking App
 
-A new Flutter project.
+A Flutter app to track packages, the mobile equivalent of [my package tracking site](https://github.com/JayCowan/package-tracker-web).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+A Firebase project must be set up to go along with the app, including adding a `GoogleService-Info.plist` file added to `./ios/` and `google-services.json` added to `./android/`. For web support, create a file `./web/firebaseconfig.js` and add your project's Firebase configuration.
+The following must be enabled:
+* Auth
+* Analytics
+* Database
+* Anything mentioned in the accompanying projects.
 
-A few resources to get you started if this is your first Flutter project:
+## Building/Running
+Run the following to build for iOS: `flutter build ios`
+Run the following to build an Android App Bundle: `flutter build appbundle`
+Run the following to biuld an Android APK: `flutter build apk`
+Web is not actively supported yet, but to build web run the following: `flutter build web`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+With an emulator active, run the following to test: `flutter run`

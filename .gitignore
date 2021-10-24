@@ -1,6 +1,7 @@
 # Firebase related
 GoogleService-Info.plist
 google-services.json
+firebaseconfig.js
 
 # Miscellaneous
 *.class
