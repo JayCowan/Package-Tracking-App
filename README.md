@@ -12,9 +12,11 @@ The following must be enabled:
 * Anything mentioned in the accompanying projects.
 
 ## Building/Running
-Run the following to build for iOS: `flutter build ios`
-Run the following to build an Android App Bundle: `flutter build appbundle`
-Run the following to biuld an Android APK: `flutter build apk`
-Web is not actively supported yet, but to build web run the following: `flutter build web`
+| Platform           | Build Command             |
+|--------------------|---------------------------|
+| iOS                | `flutter build ios`       |
+| Android App Bundle | `flutter build appbundle` |
+| Android APK        | `flutter build apk`       |
+| Web (Test)         | `flutter build web`       |
 
 With an emulator active, run the following to test: `flutter run`
