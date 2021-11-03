@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:package_tracker_app/home/shipping_display.dart';
 import 'package:package_tracker_app/home/tracking_search_delegate.dart';
 
 class Home extends StatefulWidget {
@@ -55,6 +56,14 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
+      ),
+      body: ListView.separated(
+        padding: EdgeInsets.all(MediaQuery.of(context).size.width / 10),
+        itemCount: 3,
+        itemBuilder: (BuildContext context, int index) {
+          return const ShippingDisplay();
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
     );
   }
