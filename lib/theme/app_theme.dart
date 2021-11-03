@@ -17,6 +17,7 @@ class AppTheme {
     primaryTextTheme: Typography.whiteCupertino,
     textTheme: Typography.blackCupertino,
     brightness: Brightness.light,
+    backgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
       color: _primaryColor,
       iconTheme: IconThemeData(
