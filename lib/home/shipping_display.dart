@@ -11,18 +11,20 @@ class ShippingDisplay extends StatefulWidget {
 class _ShippingDisplayState extends State<ShippingDisplay> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Theme.of(context).primaryColor,
-          width: 5,
+    return FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Theme.of(context).primaryColor,
+            width: 5,
+          ),
+          borderRadius: BorderRadius.circular(25),
         ),
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Column(
-        children: const <Widget>[
-          ShippingProgressBar(progress: 4, endValue: 5),
-        ],
+        child: Column(
+          children: const <Widget>[
+            ShippingProgressBar(progress: 4, endValue: 5),
+          ],
+        ),
       ),
     );
   }

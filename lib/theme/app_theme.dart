@@ -21,6 +21,7 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       color: _primaryColor,
       iconTheme: IconThemeData(
+        size: 24.0,
         color: Colors.white,
       ),
     ),
