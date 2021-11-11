@@ -65,6 +65,7 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
               border: Border(
                 top: BorderSide(color: Colors.grey.shade700),
                 bottom: BorderSide(color: Colors.grey.shade700),
+                left: const BorderSide(color: Colors.green),
               ),
             ),
           ),
@@ -166,7 +167,7 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
           alignment: Alignment.center,
           children: [
             Positioned(
-              right: 0,
+              right: -1,
               height: MediaQuery.of(context).size.height / 50,
               width: MediaQuery.of(context).size.width / 25,
               child: Container(
@@ -176,6 +177,7 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
                   border: Border(
                     top: BorderSide(color: Colors.grey.shade700),
                     bottom: BorderSide(color: Colors.grey.shade700),
+                    left: const BorderSide(color: Colors.green),
                   ),
                 ),
               ),
@@ -222,7 +224,7 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
               children: [
                 (index == 0
                     ? _deliveryStartedWidget(widget.progress)
-                    : Container()),
+                    : const SizedBox.shrink()),
                 Flexible(
                   child: SizedBox.fromSize(
                     size: Size(MediaQuery.of(context).size.width / 25,
@@ -236,6 +238,7 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
                       ),
                       child: LinearProgressIndicator(
                         value: _controller.value - index,
+                        minHeight: MediaQuery.of(context).size.height / 50,
                         color: Colors.green,
                         backgroundColor: Theme.of(context).backgroundColor,
                         valueColor:
@@ -244,7 +247,34 @@ class _ShippingProgressBarState extends State<ShippingProgressBar>
                     ),
                   ),
                 ),
-                Flexible(child: _getProgressIconStack(index))
+                (index == 0
+                    ? Flexible(
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Positioned(
+                              left: 0,
+                              height: MediaQuery.of(context).size.height / 50,
+                              width: MediaQuery.of(context).size.width / 25,
+                              child: Container(
+                                alignment: Alignment.centerRight,
+                                decoration: BoxDecoration(
+                                  color: Colors.green,
+                                  border: Border(
+                                    top:
+                                        BorderSide(color: Colors.grey.shade700),
+                                    bottom:
+                                        BorderSide(color: Colors.grey.shade700),
+                                    left: const BorderSide(color: Colors.green),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            _getProgressIconStack(index),
+                          ],
+                        ),
+                      )
+                    : _getProgressIconStack(index)),
               ],
             ),
           );
